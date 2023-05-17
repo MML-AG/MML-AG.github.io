@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+#projects{
+  padding: 30px ;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{ 
+    background-image: url('bg.png');
+    background-position: center center;
+    color: white;
+}
+
+h1{ 
+    font-family: 'Cinzel', serif;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10vh;
+    background: #141E30;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+background-image: linear-gradient(to right, #a4bcd5, #2f5caf); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+-webkit-background-clip: text;
+-moz-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+@keyframes cursor-blink {
+    0% {
+      opacity: 0;
+    }
+  }
+  
+ h1::after {
+    content: "";
+    width: 5px;
+    height: 50px;
+    background: linear-gradient(to right, #96bae3, #3466c3);
+    display: inline-block;
+    animation: cursor-blink 1.5s steps(2) infinite;
+ }
+
+
+ .container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background: url('bg.jpg'); */
+    position: relative;
+ }
+ .btn{
+    margin: 30px 0;
+    cursor: pointer;
+    padding: 17px 30px;
+    font-size: 1rem;
+    background: transparent;
+    color: white;
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+    text-decoration: none;
+ }
+
+
+
+
+
+
+ .popup:not(:target){
+    display: none;
+  }
+  
+  .popup:target{
+    width: 100%;
+    height: 80vh;
+    
+    display: flex;
+    position: fixed;
+    top: 30px;
+    right: 0;  
+  }
+  
+  .popup::before{
+      content: "";
+      box-sizing: border-box;
+      width: 100%;
+      
+      background-color: #064185;
+      position: fixed;
+    left: 0;
+    top: 50%;
+  }
+  
+  .popup::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #f0f0f0;
+  
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+  }
+  
+  .popup__container{
+    box-sizing: border-box;  
+    padding: 5% 15%;
+     /* 1 */background: rgba(16, 15, 15, 0.13);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border: 1px solid rgba(13, 13, 13, 0.22);
+    margin-top: 20%;
+    margin: auto; /* 1 */
+    overflow: auto; /* 1 */
+    overscroll-behavior: contain; /* 1 */
+  }
+ 
+  
+  .popup__close{
+    width: 2rem;
+    height: 2rem;
+  
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+  
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTE5IDYuNDFMMTcuNTkgNSAxMiAxMC41OSA2LjQxIDUgNSA2LjQxIDEwLjU5IDEyIDUgMTcuNTkgNi40MSAxOSAxMiAxMy40MSAxNy41OSAxOSAxOSAxNy41OSAxMy40MSAxMnoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==);
+  }
+  
+  /*
+  animation
+  */
+  
+  .popup::before{
+    will-change: height, top;
+    animation: open-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) .65s both;
+  }
+  
+  .popup::after{
+    will-change: width, opacity;
+    animation: line-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) both;
+  }
+  
+  @keyframes line-animation{
+  
+    0%{
+      width: 0;
+      opacity: 1;
+    }
+  
+    99%{
+      width: 100%;
+      opacity: 1;
+    }
+  
+    100%{
+      width: 100%;
+      opacity: 0;
+    }  
+  }
+  
+  @keyframes open-animation{
+  
+    0%{
+      height: 0;
+      top: 50%;
+    }
+  
+    100%{
+      height: 100vh;
+      top: 0;
+    }
+  }
+  
+  .popup__container{
+    animation: fade .5s ease-out 1.3s both;
+  }
+  
+  @keyframes fade{
+  
+    0%{
+      opacity: 0;
+    }
+  
+    100%{
+      opacity: 1;
+    }
+  }
+  
+
+  #navbar a{
+    padding: 10px 20px ;
+    font-size: 24px;
+  }
+  #navbar a:hover{
+    background-color: #3466c3;
+  }
+  
+
+  swiper-container {
+    margin: 100px auto;
+    width: 80%;
+    height: 640px;
+  }
+
+  swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    width: 60vh;
+  }
+
+
+  swiper-slide:nth-child(1){
+    background: #96bae3;
+  }
+
+  swiper-slide img{
+    width: 100%;
+    height: 100%;
+  }
+
+  #aboutText{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: lighter;
+    padding: 20px;
+    background-color: rgb(5, 74, 104);
+    animation: pulsate 0.31s ease-in-out infinite alternate;     
+  }
+
+  @keyframes pulsate {
+    
+    100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px rgb(9, 49, 109)
+    
+    }
+    
+    0% {
+  
+      text-shadow:
+      0 0 4px #fff,
+      0 0 10px #fff,
+      0 0 18px #fff,
+      0 0 38px rgb(9, 49, 109),
+      0 0 73px rgb(9, 49, 109),
+      0 0 80px rgb(9, 49, 109),
+      0 0 94px rgb(9, 49, 109),
+      0 0 140px rgb(9, 49, 109);
+  
+  }
+
+}
+#about{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100vh;
+}
+.about-container{
+  display: flex;
+  width: 80%;
+  padding: 60px;
+}
+.text-container{
+  width: 50%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  align-items: center;
+  padding: 20px;
+  background: rgba(237, 237, 237, 0.22);
+}
+.text-container p{
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.image-container{
+  width: 50%;
+  height: 300px;
+}
+.image-container img{
+  width: 100%;
+  border-radius: 200px;
+}

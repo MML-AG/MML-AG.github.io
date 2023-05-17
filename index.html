@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshat's Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body onload="typeWriter()">
+    <main class="container">
+        <h1 id="text"></h1> 
+        <h2 id="aboutText">Full Stack Web Devloper | A passionate Computer Science Student</h2>
+      <a href="#popup-article" class="btn"> Start the Journey <i class="fa fa-sharp fa-light fa-arrow-right fa-beat-fade"></i> </a>
+    </main>
+
+    <section id="projects">
+      <h1>< projects ></h1>
+      <swiper-container init="false" class="mySwiper" pagination="true" navigation = "true">
+        <swiper-slide><img src="project 1.png" alt=""></swiper-slide>
+        <swiper-slide> <img src="project 2.png" alt=""></swiper-slide>
+        <swiper-slide><img src="project 3.png" alt=""></swiper-slide>
+      </swiper-container>
+      <h1>< /projects ></h1>
+    </section>
+    <div id="popup-article" class="popup">
+        <div class="popup__container">
+          <a href="#" class="popup__close">
+            <span class="screen-reader"></span>
+          </a>  
+          <div class="popup__content">
+            <nav id="navbar">
+
+                <a href="#about">About Me</a>
+                <a href="#projects">My Projects</a>
+                <a href="#contact">Contact me</a>
+            </nav>
+
+            
+           
+          </div>
+        </div>
+      </div>
+      <section id="about">
+        <h1>< about-me ></h1>
+        <div class="about-container">
+          <div class="text-container">
+           <p>
+             Hi, I am Akshat Goel. A learner and computer science enthusiast who practices computer applications with passion. Web developement is my key skill with app developement and graphic designing being the cherry on cake. 
+             I constantly work on improving myself and my skills. This portfolio website is an example of my hard work I put in desiging and developing websites. I hope you'll enjoy my work and help me grow with you!!
+          </p>
+            
+          </div>
+          <div class="image-container">
+            <img src="about.png" alt="">
+          </div>
+        </div>
+        <h1>< /about-me ></h1>
+        
+      </section>
+      
+      <section id="contact">
+        <h1>< contact-me ></h1>
+        
+      </section>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+</body>
+<script>
+    var i = 0;
+var txt = 'Hi, I am Akshat Goel'; /* The text */
+var speed = 100; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("text").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+var swiperEl = document.querySelector(".mySwiper");
+    Object.assign(swiperEl, {
+      grabCursor: true,
+      effect: "creative",
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: [0, 0, -400],
+        },
+        next: {
+          translate: ["100%", 0, 0],
+        },
+      },
+    });
+    swiperEl.initialize()
+</script>
+</html>
