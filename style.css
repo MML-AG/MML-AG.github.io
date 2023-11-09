@@ -246,8 +246,8 @@ background-image: linear-gradient(to right, #a4bcd5, #2f5caf); /* W3C, IE 10+/ E
     font-size: 30px;
     font-weight: lighter;
     padding: 20px;
-    background-color: rgb(5, 74, 104);
-    animation: pulsate 0.31s ease-in-out infinite alternate;     
+    /* background-color: rgb(5, 74, 104);
+    animation: pulsate 0.31s ease-in-out infinite alternate;      */
   }
 
   @keyframes pulsate {
